@@ -76,3 +76,9 @@ gulp
 - [Terminology - Introduction](https://www.storyblok.com/docs/terminology/introduction)
 - [Content Delivery API - Introduction](https://www.storyblok.com/docs/Delivery-Api/introduction)
 
+
+<br>
+<br>
+<p align="center">
+<img src="https://a.storyblok.com/f/39898/1c9c224705/storyblok_black.svg" alt="Storyblok Logo">
+</p>
