@@ -1,0 +1,6 @@
+{{story.content._editable|safe}}
+<div class="root">
+{% for blok in story.content.body %}
+    {% include 'components/' + blok.component + '.html.j2' %}
+{% endfor %}
+</div>

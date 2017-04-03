@@ -1,0 +1,10 @@
+.DS_Store
+.ftppass
+*.sass-cache/
+*.sublime-workspace
+*.sublime-project
+bower_components
+node_modules
+static
+db.sqlite3
+*.pyc
