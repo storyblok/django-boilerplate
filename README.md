@@ -2,7 +2,9 @@
   <h1 align="center">django-boilerplate for Storyblok</h1>
   <p align="center">A <a href="https://www.storyblok.com" target="_blank">Storyblok</a> boilerplate in python with django to simply start your website with us.</p>
 </p>
-<br><br>
+<br>
+
+[![GitHub release](https://img.shields.io/github/release/storyblok/django-boilerplate.svg)](https://github.com/storyblok/django-boilerplate/)
 
 ## What is a storyblok boilerplate
 If you want to use your server or have already an existing project in which you want to integrate Storyblok you can use one of our boilerplates. 
