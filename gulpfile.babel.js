@@ -35,8 +35,8 @@ gulp.task('scripts', function () {
       debug: true
     })
     .bundle()
-    .pipe(source('main.js'))
     .on('error', notify.onError(function (error) { return error.message; }))
+    .pipe(source('main.js'))
     .pipe(gulp.dest('static/scripts/'))
     .pipe(browserSync.stream())
 })
