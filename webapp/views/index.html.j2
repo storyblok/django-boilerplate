@@ -11,13 +11,13 @@
 
     <link rel="icon" type="image/png" href="//app.storyblok.com/images/favicon-32x32.png" sizes="32x32">
 
-    <link rel="stylesheet" href="/static/styles/main.css" media="all" />
+    <link rel="stylesheet" href="http://localhost:3000/static/styles/main.css" media="all" />
   </head>
 <body>
 
 	{% include 'components/' ~ story.content.component ~ '.html.j2' %}
 
-  <script type="text/javascript" src="/static/scripts/main.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/static/scripts/main.js"></script>
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script type="text/javascript" src="//app.storyblok.com/storyblok-latest.js"></script>
