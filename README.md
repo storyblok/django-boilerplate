@@ -13,6 +13,8 @@ If you want to use your server or have already an existing project in which you 
 
 The most efficient way to start a storyblok project as a developer would be our [Command Line Interface](https://www.storyblok.com/docs/Guides/command-line-interface).
 
+For this specific boilerplate we created a full tutorial: https://www.storyblok.com/tp/add-a-headless-cms-to-python-django-in-5-minutes
+
 ```
 npm i storyblok-cli -g
 storyblok
@@ -29,7 +31,6 @@ In the `settings.py` all you need to change is the `STORYBLOK_CONFIGURATION` - b
 
 ```
 STORYBLOK_CONFIGURATION = {
-  'SPACE_ID': 12345,
   'PRIVATE_TOKEN': 'Iw3XKcJb6MwkdZEwoQ9BCQtt', #change this to your private key.
   'HOME_SLUG': 'home'
 }
