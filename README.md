@@ -1,6 +1,6 @@
 <p align="center">
   <h1 align="center">django-boilerplate for Storyblok</h1>
-  <p align="center">A <a href="https://www.storyblok.com" target="_blank">Storyblok</a> boilerplate in python with django to simply start your website with us.</p>
+  <p align="center">A <a href="https://www.storyblok.com" target="_blank">Storyblok</a> boilerplate in python with django which helps you to get started.</p>
 </p>
 <br>
 
@@ -16,7 +16,7 @@ The most efficient way to start a storyblok project as a developer would be our 
 For this specific boilerplate we created a full tutorial: https://www.storyblok.com/tp/add-a-headless-cms-to-python-django-in-5-minutes
 
 ```
-npm i storyblok-cli -g
+npm i storyblok -g
 storyblok
 ```
 
