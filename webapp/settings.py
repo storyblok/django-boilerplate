@@ -141,7 +141,6 @@ STATIC_URL = '/static/'
 # Storyblok configuration for your own space
 # https://www.storyblok.com/docs/terminology/introduction
 STORYBLOK_CONFIGURATION = {
-  'SPACE_ID': 12345,
-  'PRIVATE_TOKEN': 'Iw3XKcJb6MwkdZEwoQ9BCQtt',
+  'PRIVATE_TOKEN': 'akYA0RB4BzCPUoRfjIvUdQtt',
   'HOME_SLUG': 'home'
 }
