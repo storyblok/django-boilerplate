@@ -17,7 +17,7 @@ For this specific boilerplate we created a full tutorial: https://www.storyblok.
 
 ```
 npm i storyblok -g
-storyblok
+storyblok select
 ```
 
 and choose your boilerplate. You can of course simply `download` or `clone` this repository as well.
