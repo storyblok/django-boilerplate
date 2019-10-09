@@ -38,11 +38,12 @@ STORYBLOK_CONFIGURATION = {
 
 ## Start your local environment
 
-Make sure [Django](https://www.djangoproject.com/) and [Jinja2](http://jinja.pocoo.org/) are installed:
+Make sure [Django](https://www.djangoproject.com/), [Jinja2](http://jinja.pocoo.org/) and [Requests](https://pypi.org/project/requests/) are installed:
 
 ```
-pip install django
-pip install Jinja2
+pip3 install django
+pip3 install Jinja2
+pip3 install requests
 
 ## This will start the python server for you as you already know it from django itself.
 python manage.py runserver
