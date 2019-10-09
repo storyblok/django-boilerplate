@@ -13,23 +13,25 @@ const plumber = require('gulp-plumber')
 const reload = browserSync.reload
 const sass = require('gulp-sass')
 const source = require('vinyl-source-stream')
+const port = 3000
 
-gulp.task('clean', function () {
+gulp.task('clean', gulp.series(function (done) {
   del.sync(['static']);
-});
+  return done()
+}))
 
-gulp.task('version', function () {
-  return gitrev.long(function (str) {
-    return string_src('version.cache', str).pipe(gulp.dest('static'))
+gulp.task('version', gulp.series(async function () {
+  return await gitrev.long(async function (str) {
+    return await string_src('version.cache', str).pipe(gulp.dest('static'))
   })
-})
+}))
 
-gulp.task('content', function () {
+gulp.task('content', gulp.series( function () {
   return gulp.src('app/**/*.{xml,json,yml}')
     .pipe(gulp.dest('static'))
-})
+}))
 
-gulp.task('scripts', function () {
+gulp.task('scripts', gulp.series( function () {
   return browserify({
       entries: 'app/scripts/main.js',
       debug: true
@@ -39,9 +41,9 @@ gulp.task('scripts', function () {
     .pipe(source('main.js'))
     .pipe(gulp.dest('static/scripts/'))
     .pipe(browserSync.stream())
-})
+}))
 
-gulp.task('styles', function () {
+gulp.task('styles', gulp.series( function (done) {
   return gulp.src('app/styles/**/*.{sass,scss}')
     .pipe(plumber())
     .pipe(globbing({
@@ -55,12 +57,12 @@ gulp.task('styles', function () {
     .pipe(autoprefixer())
     .pipe(gulp.dest('static/styles'))
     .pipe(browserSync.stream())
-})
+}))
 
-gulp.task('default', ['clean', 'version', 'styles', 'scripts', 'content'], function () {
+gulp.task('default', gulp.series( ['clean', 'version', 'styles', 'scripts', 'content'], async function (done) {
   browserSync({
     proxy: {
-      target: 'http://localhost:8000',
+      target: `http://localhost:${port}/`,
       reqHeaders: function (config) {
         return {
           'accept-encoding': 'identity',
@@ -80,18 +82,32 @@ gulp.task('default', ['clean', 'version', 'styles', 'scripts', 'content'], funct
     logLevel: 'silent'
   })
 
-  gulp.watch('webapp/views/**/*', reload)
-  gulp.watch('app/styles/**/*', ['styles'])
-  gulp.watch('app/scripts/**/*', ['scripts'])
-});
+  gulp.watch('webapp/views/**/*', gulp.parallel(reload))
+  gulp.watch('app/styles/**/*', gulp.parallel(['styles']))
+  gulp.watch('app/scripts/**/*', gulp.parallel(['scripts']))
 
-gulp.task('build', ['clean', 'version', 'styles', 'scripts', 'content']);
+  return done()
+}))
+
+gulp.task('build', gulp.series([
+   'clean',
+   'version',
+   'styles',
+   'scripts',
+   'content',
+   'default']
+))
 
 function string_src(filename, string) {
-  var src = require('stream').Readable({ objectMode: true });
+  let src = require('stream').Readable({ objectMode: true })
   src._read = function () {
-    this.push(new File({ cwd: "", base: "", path: filename, contents: new Buffer(string) }))
+    this.push(new File({
+      cwd: "",
+      base: "base",
+      path: filename,
+      contents: new Buffer.alloc(0,string)
+    }))
     this.push(null)
   }
-  return src;
+  return src
 }

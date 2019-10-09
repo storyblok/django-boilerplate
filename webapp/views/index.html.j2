@@ -9,18 +9,19 @@
     <meta name="generator" content="storyblok">
     <meta name="cms" content="https://www.storyblok.com">
 
-    <link rel="icon" type="image/png" href="//app.storyblok.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://app.storyblok.com/images/favicon-32x32.png" sizes="32x32">
 
-    <link rel="stylesheet" href="/static/styles/main.css" media="all" />
   </head>
 <body>
 
 	{% include 'components/' ~ story.content.component ~ '.html.j2' %}
 
-  <script type="text/javascript" src="/static/scripts/main.js"></script>
-
+ 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	<script type="text/javascript" src="//app.storyblok.com/storyblok-latest.js"></script>
+	<script type="text/javascript" src="https://app.storyblok.com/f/storyblok-latest.js"></script>
+	
+	
+
 	<script type="text/javascript">
 		function invalidateStory(data) {
 			$.ajax({
