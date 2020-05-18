@@ -134,13 +134,10 @@ USE_TZ = True
 # for the webapp boilerplate we will use gulp/browsersync to get the static files synced.
 STATIC_URL = '/static/'
 
-
-
-
-
 # Storyblok configuration for your own space
 # https://www.storyblok.com/docs/terminology/introduction
-STORYBLOK_CONFIGURATION = {
+# Switch to your token for editing, or the below token is read only
+STORYBLOK_CONFIGURATION = { 
   'PRIVATE_TOKEN': 'akYA0RB4BzCPUoRfjIvUdQtt',
   'HOME_SLUG': 'home'
 }

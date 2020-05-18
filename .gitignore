@@ -6,5 +6,12 @@
 bower_components
 node_modules
 static
+version.cache
+package-lock.json
+.Python
+bin
+include
+lib
+fonts
 db.sqlite3
 *.pyc
