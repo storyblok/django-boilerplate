@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repository is no longer maintained.
+
 <p align="center">
   <h1 align="center">django-boilerplate for Storyblok</h1>
   <p align="center">A <a href="https://www.storyblok.com" target="_blank">Storyblok</a> boilerplate in python with django which helps you to get started.</p>
